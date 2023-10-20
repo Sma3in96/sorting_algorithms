@@ -18,8 +18,12 @@ void selection_sort(int *array, size_t size)
 			if (array[new_start] > array[j])
 				new_start = j;
 		}
-		temp = array[new_start];
-		array[new_start] = array[i];
-		array[i] = temp;
+		if (new_start != i)
+		{
+			temp = array[new_start];
+		    array[new_start] = array[i];
+		    array[i] = temp;
+			print_array(array, size);
+		}
 	}
 }
