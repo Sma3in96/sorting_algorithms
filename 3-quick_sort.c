@@ -50,5 +50,5 @@ void sort_recu(int *array, size_t size, int indexlow, int indexhigh)
  */
 void quick_sort(int *array, size_t size)
 {
-	sort_recu(array, size, 0, size - 1); 
+	sort_recu(array, size, 0, size - 1);
 }

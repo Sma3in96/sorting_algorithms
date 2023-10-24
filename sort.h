@@ -22,4 +22,8 @@ void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
+
+void int_swap(int *a, int *b);
+int index_of_pivot(int *array, size_t size, int indexlow, int indexhigh);
+void sort_recu(int *array, size_t size, int indexlow, int indexhigh);
 #endif
