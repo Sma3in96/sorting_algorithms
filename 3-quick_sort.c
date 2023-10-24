@@ -25,7 +25,7 @@ int index_of_pivot(int *array, size_t size, int indexlow, int indexhigh)
 {
 	int i, j;
 
-	i = indexlow - 1;
+	i = indexlow;
 	for (j = indexlow; j <= indexhigh; j++)
 	{
 		if (array[j] < array[indexhigh])
