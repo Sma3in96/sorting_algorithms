@@ -38,12 +38,12 @@ int index_of_pivot(int *array, size_t size, int indexlow, int indexhigh)
 			i++;
 		}
 	}
-	if (array[i + 1] > array[indexhigh])
+	if (array[i] > array[indexhigh])
 	{
-	int_swap(&array[i + 1], &array[indexhigh]);
+	int_swap(&array[i], &array[indexhigh]);
 	print_array(array, size);
 	}
-	return (i + 1);
+	return (i);
 }
 /**
 * sort_recu - function recu
