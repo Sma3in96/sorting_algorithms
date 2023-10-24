@@ -1,10 +1,10 @@
 #include "sort.h"
 /**
- * int_swap - swap two int
- * @a: 1st int
- * @b: 2nd int
- * Return: void
- */
+* int_swap - swap two int
+* @a: 1st int
+* @b: 2nd int
+* Return: void
+*/
 void int_swap(int *a, int *b)
 {
 	int temp;
@@ -14,13 +14,13 @@ void int_swap(int *a, int *b)
 	*b = temp;
 }
 /**
- * index_of_pivot - find correct index of pivot
- * @array: array
- * @size: size of array
- * @indexlow: low
- * @indexhigh: high
- * Return: int
- */
+* index_of_pivot - find correct index of pivot
+* @array: array
+* @size: size of array
+* @indexlow: low
+* @indexhigh: high
+* Return: int
+*/
 int index_of_pivot(int *array, size_t size, int indexlow, int indexhigh)
 {
 	int i, j;
@@ -30,23 +30,29 @@ int index_of_pivot(int *array, size_t size, int indexlow, int indexhigh)
 	{
 		if (array[j] < array[indexhigh])
 		{
-			i++;
+			if (i < j)
+			{
 			int_swap(&array[j], &array[i]);
 			print_array(array, size);
+			}
+			i++;
 		}
 	}
+	if (array[i + 1] > array[indexhigh])
+	{
 	int_swap(&array[i + 1], &array[indexhigh]);
 	print_array(array, size);
+	}
 	return (i + 1);
 }
 /**
- * sort_recu - function recu
- * @array: array to sort
- * @size: size of array
- * @indexlow: start
- * @indexhigh: end
- * Return: void
- */
+* sort_recu - function recu
+* @array: array to sort
+* @size: size of array
+* @indexlow: start
+* @indexhigh: end
+* Return: void
+*/
 void sort_recu(int *array, size_t size, int indexlow, int indexhigh)
 {
 	int pivot;
@@ -59,11 +65,11 @@ void sort_recu(int *array, size_t size, int indexlow, int indexhigh)
 	}
 }
 /**
- * quick_sort - sorting an array with quick sort
- * @array: array to sort
- * @size: size of array
- * Return: void
- */
+* quick_sort - sorting an array with quick sort
+* @array: array to sort
+* @size: size of array
+* Return: void
+*/
 void quick_sort(int *array, size_t size)
 {
 	sort_recu(array, size, 0, size - 1);
