@@ -14,6 +14,16 @@ void int_swap(int *a, int *b)
 	*b = temp;
 }
 /**
+ * index_of_pivot - find correct index of pivot
+ * @array: array
+ * @size: size of array
+ * @indexlow: low
+ * @indexhigh: high
+ * Return: int
+ */
+int index_of_pivot(int *array, size_t size, int indexlow, int indexhigh)
+{}
+/**
  * sort_recu - function recu
  * @array: array to sort
  * @size: size of array
