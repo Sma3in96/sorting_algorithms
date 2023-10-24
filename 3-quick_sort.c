@@ -22,7 +22,21 @@ void int_swap(int *a, int *b)
  * Return: int
  */
 int index_of_pivot(int *array, size_t size, int indexlow, int indexhigh)
-{}
+{
+	int i, j;
+
+	i = indexlow - 1;
+	for (j = indexlow; j <= indexhigh; j++)
+	{
+		if (array[j] < array[indexhigh])
+		{
+			i++;
+			int_swap(array[j], array[i]);
+		}
+	}
+	int_swap(array[i + 1], array[indexhigh]);
+	return (i + 1);
+}
 /**
  * sort_recu - function recu
  * @array: array to sort
