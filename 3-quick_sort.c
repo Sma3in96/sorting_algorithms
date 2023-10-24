@@ -31,10 +31,12 @@ int index_of_pivot(int *array, size_t size, int indexlow, int indexhigh)
 		if (array[j] < array[indexhigh])
 		{
 			i++;
-			int_swap(array[j], array[i]);
+			int_swap(&array[j], &array[i]);
+			print_array(array, size);
 		}
 	}
-	int_swap(array[i + 1], array[indexhigh]);
+	int_swap(&array[i + 1], &array[indexhigh]);
+	print_array(array, size);
 	return (i + 1);
 }
 /**
